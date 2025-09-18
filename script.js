@@ -279,7 +279,7 @@ let copos = [];
 // --- Explosión en click ---
 function createExplosion(x, y) {
   const colors = ["#ffffff", "#ffd700", "#fffacd", "#ffffe0"];
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 15; i++) {
     const angle = Math.random() * 2 * Math.PI;
     const speed = Math.random() * 4 + 1;
     particles.push(
@@ -449,3 +449,33 @@ class FallingCopo {
   }
 }
 
+
+
+
+
+
+
+
+
+// --- Soporte para celular (touch) ---
+canvas.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // evita que se desplace la página
+  dragging = true;
+  const touch = e.touches[0];
+  lastX = touch.clientX;
+  lastY = touch.clientY;
+  createExplosion(touch.clientX, touch.clientY);
+}, { passive: false });
+
+canvas.addEventListener("touchend", (e) => {
+  e.preventDefault();
+  dragging = false;
+}, { passive: false });
+
+canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault(); // evita scroll mientras arrastras
+  if (dragging) {
+    const touch = e.touches[0];
+    createTrail(touch.clientX, touch.clientY);
+  }
+}, { passive: false });
