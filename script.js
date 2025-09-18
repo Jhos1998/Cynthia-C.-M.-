@@ -354,9 +354,11 @@ ctx.clearRect(0, 0, width, height);
 animate();
 
 
+const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 5000 : 2500;
 setInterval(() => {
   copos.push(new FallingCopo());
-}, 2500); // ❄️ más copos, cada 2.5s
+}, copoInterval);
+ // ❄️ más copos, cada 2.5s
 
 // --- Eventos ---
 let dragging = false;
@@ -482,6 +484,7 @@ canvas.addEventListener("touchmove", (e) => {
     createTrail(touch.clientX, touch.clientY);
   }
 }, { passive: false });
+
 
 
 
