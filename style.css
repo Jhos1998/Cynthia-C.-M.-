@@ -73,6 +73,18 @@ body.modo-oscuro .love-title {
 }
 
 
+body {
+  background-size: cover;     /* que cubra toda la pantalla */
+  background-position: center; /* centrada */
+  background-repeat: no-repeat;
+}
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 🔹 evita desplazamiento */
+}
 
 
