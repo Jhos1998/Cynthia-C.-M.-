@@ -87,4 +87,18 @@ html, body {
   overflow: hidden; /* 🔹 evita desplazamiento */
 }
 
+/* 🔹 Fondo por defecto (PC) */
+body {
+  background: url("back.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* 🔹 Fondo especial para celular */
+@media (max-width: 768px) {
+  body {
+    background: url("back1.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
 
