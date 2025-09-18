@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hola ssssssssssssssssssssssssssssssssssssssssssssssssssss🤗",
+    "Hola saaa 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -479,4 +479,5 @@ canvas.addEventListener("touchmove", (e) => {
     createTrail(touch.clientX, touch.clientY);
   }
 }, { passive: false });
+
 
