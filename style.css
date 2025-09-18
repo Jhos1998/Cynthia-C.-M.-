@@ -1,0 +1,78 @@
+#mensaje-container {
+  position: absolute;
+  top: 80%;                  /* baja el texto un poco */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Sour Gummy", cursive;
+  min-height: 3.5em;
+  width: 90%;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.mensaje-linea {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #fff8dc;
+  text-shadow: 0 0 10px #000, 0 0 15px rgba(255, 215, 0, 0.8);
+  padding: 0 20px;
+  max-width: 100%;
+}
+
+.mensaje-linea.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+
+.mensaje-linea.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+
+
+
+
+
+.flowers {
+  display: none; /* 🔹 Ocultar flores al inicio */
+}
+
+.flowers.mostrar {
+  display: block; /* 🔹 Mostrar al presionar el botón */
+}
+
+
+
+
+
+
+/* Fondo inicial claro */
+
+
+/* Modo oscuro tras presionar */
+body.modo-oscuro::before {
+  opacity: 0.15;
+  filter: blur(15px);
+}
+
+/* Título bonito con glow en modo oscuro */
+body.modo-oscuro .love-title {
+  color: #ffff00;
+  text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 20px #ff0,
+               0 0 30px #ff0,
+               0 0 40px #ff0;
+}
+
+
+
+
+
