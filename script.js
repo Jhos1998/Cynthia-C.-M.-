@@ -279,7 +279,9 @@ let copos = [];
 // --- Explosión en click ---
 function createExplosion(x, y) {
   const colors = ["#ffffff", "#ffd700", "#fffacd", "#ffffe0"];
-  for (let i = 0; i < 15; i++) {
+  const explosionCount = /Mobi|Android/i.test(navigator.userAgent) ? 8 : 15;
+for (let i = 0; i < explosionCount; i++) {
+
     const angle = Math.random() * 2 * Math.PI;
     const speed = Math.random() * 4 + 1;
     particles.push(
@@ -311,7 +313,8 @@ function createTrail(x, y) {
 }
 
 // --- Loop corregido (reemplaza tu animate() por esto) ---
-const MAX_PARTICLES = 700; // ajusta si quieres más/menos partículas en pantalla
+const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 300 : 700;
+ // ajusta si quieres más/menos partículas en pantalla
 
 function animate() {
   // 1) Fade suave del frame anterior SIN parpadear:
