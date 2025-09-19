@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hola 🤗",
+    "Holuu 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -362,10 +362,20 @@ ctx.clearRect(0, 0, width, height);
 animate();
 
 
-const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 9000 : 1500;
-setInterval(() => {
-  copos.push(new FallingCopo());
-}, copoInterval);
+// --- Copos de nieve ---
+// En PC: salen normal cada 1.5s
+// En Móvil: empiezan 3s después y salen cada 8s
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  setTimeout(() => {
+    setInterval(() => {
+      copos.push(new FallingCopo());
+    }, 8000); // cada 8 seg en celular (menos copos)
+  }, 3000);   // retraso de 3s al presionar play (no todo de golpe)
+} else {
+  setInterval(() => {
+    copos.push(new FallingCopo());
+  }, 1500); // PC normal
+}
  // ❄️ más copos, cada 2.5s
 
 // --- Eventos ---
@@ -521,7 +531,6 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
-
 
 
 
