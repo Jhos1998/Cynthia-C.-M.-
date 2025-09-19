@@ -279,7 +279,7 @@ let copos = [];
 // --- Explosión en click ---
 function createExplosion(x, y) {
   const colors = ["#ffffff", "#ffd700", "#fffacd", "#ffffe0"];
-  const explosionCount = /Mobi|Android/i.test(navigator.userAgent) ? 8 : 15;
+  const explosionCount = /Mobi|Android/i.test(navigator.userAgent) ? 5 : 15;
 for (let i = 0; i < explosionCount; i++) {
 
     const angle = Math.random() * 2 * Math.PI;
@@ -313,7 +313,7 @@ function createTrail(x, y) {
 }
 
 // --- Loop corregido (reemplaza tu animate() por esto) ---
-const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 300 : 700;
+const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 100 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 
 function animate() {
@@ -354,7 +354,7 @@ ctx.clearRect(0, 0, width, height);
 animate();
 
 
-const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 5000 : 2500;
+const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 5000 : 1500;
 setInterval(() => {
   copos.push(new FallingCopo());
 }, copoInterval);
@@ -387,9 +387,13 @@ window.addEventListener("mouseup", () => {
   }
 });
 
+// 🔹 Control de cuántos brillitos se generan
+const trailCount = /Mobi|Android/i.test(navigator.userAgent) ? 1 : 2;
+
+// --- Movimiento con mouse (PC) ---
 window.addEventListener("mousemove", (e) => {
   if (dragging) {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < trailCount; i++) {
       createTrail(e.clientX, e.clientY);
     }
   }
@@ -509,6 +513,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
