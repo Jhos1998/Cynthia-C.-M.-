@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         audio.volume = 1; // volumen normal
         setTimeout(() => {
           mostrarMensaje(mensaje, [], 3500);
-        }, 3000);
+        }, 4000);
       }
     }
   });
@@ -279,17 +279,16 @@ let copos = [];
 // --- Explosión en click ---
 function createExplosion(x, y) {
   const colors = ["#ffffff", "#ffd700", "#fffacd", "#ffffe0"];
-  const explosionCount = /Mobi|Android/i.test(navigator.userAgent) ? 5 : 15;
-for (let i = 0; i < explosionCount; i++) {
-
+  const explosionCount = /Mobi|Android/i.test(navigator.userAgent) ? 5 : 12; // menos en móvil
+  for (let i = 0; i < explosionCount; i++) {
     const angle = Math.random() * 2 * Math.PI;
-    const speed = Math.random() * 4 + 1;
+    const speed = Math.random() * 1.2 + 0.3; // 🔹 velocidad entre 0.3 y 1.5
     particles.push(
       new Particle(
         x,
         y,
         colors[Math.floor(Math.random() * colors.length)],
-        Math.random() * 4 + 2,
+        Math.random() * 3 + 1.5, // tamaño más pequeño (1.5 a 4.5 px)
         { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed }
       )
     );
@@ -306,13 +305,12 @@ function createTrail(x, y) {
       x,
       y,
       color,
-      Math.random() * 2 + 1.5,
-      { x: (Math.random() - 0.5) * 0.8, y: (Math.random() - 0.5) * 0.8 }
+      Math.random() * 2 + 1, // tamaño más chico y estable
+      { x: (Math.random() - 0.5) * 0.25, y: (Math.random() - 0.5) * 0.25 } // 🔹 movimiento muy suave
     )
   );
 }
 
-// --- Loop corregido (reemplaza tu animate() por esto) ---
 const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 100 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 // Dentro de audio.addEventListener("play", ...)
@@ -351,14 +349,20 @@ ctx.clearRect(0, 0, width, height);
     // quitar los más antiguos
     particles.splice(0, particles.length - MAX_PARTICLES);
   }
+  // 🔹 Cap total de copos para evitar saturación en móviles
+  const MAX_COPOS = /Mobi|Android/i.test(navigator.userAgent) ? 40 : 120;
+  if (copos.length > MAX_COPOS) {
+    copos.splice(0, copos.length - MAX_COPOS);
+  }
 
   requestAnimationFrame(animate);
+  
 }
 
 animate();
 
 
-const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 5000 : 1500;
+const copoInterval = /Mobi|Android/i.test(navigator.userAgent) ? 9000 : 1500;
 setInterval(() => {
   copos.push(new FallingCopo());
 }, copoInterval);
@@ -423,14 +427,14 @@ class FallingCopo {
     this.x = Math.random() * width;
     this.y = -20;
     this.size = Math.random() * 8 + 6;     // tamaño copo
-    this.speed = Math.random() * 1.5 + 0.5; // velocidad de caída
+    this.speed = Math.random() * 0.4 + 0.1; // velocidad de caída
     this.alpha = 1;
     this.offset = Math.random() * 100;     // desfase para movimiento oscilante
   }
 
   update() {
     this.y += this.speed;
-    this.x += Math.sin((this.y + this.offset) * 0.02) * 1; // ❄️ se balancea
+    this.x += Math.sin((this.y + this.offset) * 0.02) *0.3; // ❄️ se balancea
     if (this.y > height + 20) {
       this.alpha = 0; // desaparece al salir
     }
