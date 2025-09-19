@@ -315,6 +315,10 @@ function createTrail(x, y) {
 // --- Loop corregido (reemplaza tu animate() por esto) ---
 const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 100 : 700;
  // ajusta si quieres más/menos partículas en pantalla
+// Dentro de audio.addEventListener("play", ...)
+setTimeout(() => {
+  animate(); // arranca el loop de partículas medio segundo después
+}, 500);
 
 function animate() {
   // 1) Fade suave del frame anterior SIN parpadear:
@@ -513,6 +517,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
