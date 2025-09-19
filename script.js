@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Holi 🤗",
+    "Holu 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -486,6 +486,29 @@ canvas.addEventListener("touchmove", (e) => {
 }, { passive: false });
 
 
+
+// --- Soporte táctil para móviles ---
+window.addEventListener("touchstart", (e) => {
+  dragging = true;
+  const touch = e.touches[0];
+  lastX = touch.clientX;
+  lastY = touch.clientY;
+});
+
+window.addEventListener("touchend", () => {
+  dragging = false;
+});
+
+window.addEventListener("touchmove", (e) => {
+  if (dragging) {
+    const touch = e.touches[0];
+    for (let i = 0; i < 2; i++) {
+      createTrail(touch.clientX, touch.clientY);
+    }
+    lastX = touch.clientX;
+    lastY = touch.clientY;
+  }
+});
 
 
 
