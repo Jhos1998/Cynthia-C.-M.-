@@ -115,5 +115,11 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  body.modo-oscuro::before {
+    filter: none !important; /* sin blur en tiempo real */
+    background-image: url("back1-blur.jpeg") !important; /* versión desenfocada */
+  }
+}
 
 
