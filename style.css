@@ -88,3 +88,9 @@ html, body {
 }
 
 
+@media (max-width: 480px) {
+  .play-pause-btn {
+    width: 48px;
+    height: 48px;
+  }
+}
