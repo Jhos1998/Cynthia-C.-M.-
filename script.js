@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- PARTICULAS (ESTRELLAS/BRILLOS) ---
 const canvas = document.createElement("canvas");
-const ctx = canvas.getContext("2d", { alpha: false });
+const ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
 
 canvas.style.position = "fixed";
@@ -542,6 +542,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
