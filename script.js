@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Holo 🤗",
+    "Holua 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -531,7 +531,6 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
-
 
 
 
