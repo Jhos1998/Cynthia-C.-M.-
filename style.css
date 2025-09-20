@@ -93,4 +93,13 @@ html, body {
 }
 
 
+/* 🔹 En móviles reducimos la velocidad de animaciones */
+@media (max-width: 768px) {
+  .flower,
+  .flower__grass {
+    animation-duration: 2s !important; /* más lento */
+    animation-timing-function: ease-in-out !important; /* más suave */
+  }
+}
+
 
