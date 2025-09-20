@@ -23,7 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+<link rel="preload" as="image" href="back.jpeg">
+  <link rel="preload" as="image" href="back1.jpeg">
     
     <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;❤️&lt;/text&gt;&lt;/svg&gt;">
     <style>
@@ -93,11 +94,14 @@
 /* 🔹 Fondo especial para celular */
 @media (max-width: 768px) {
   body::before {
-    background-image: url("back1.jpeg");
-    background-size: cover;
-    background-position: center center;
+    background-image: image-set(
+      url("back1.avif") type("image/avif"),
+      url("back1.webp") type("image/webp"),
+      url("back1.jpeg") type("image/jpeg")
+    );
   }
 }
+
 
 
 body.modo-oscuro::before {

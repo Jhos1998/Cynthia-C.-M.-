@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hola 🤗",
+    "Holua 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -311,7 +311,7 @@ function createTrail(x, y) {
   );
 }
 
-const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 100 : 700;
+const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 50 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 // Dentro de audio.addEventListener("play", ...)
 setTimeout(() => {
@@ -531,7 +531,6 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
-
 
 
 
