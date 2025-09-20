@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- PARTICULAS (ESTRELLAS/BRILLOS) ---
 const canvas = document.createElement("canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d", { alpha: false });
 document.body.appendChild(canvas);
 
 canvas.style.position = "fixed";
@@ -316,7 +316,7 @@ function createTrail(x, y) {
   );
 }
 
-const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 50 : 700;
+const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 30 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 // Dentro de audio.addEventListener("play", ...)
 window.addEventListener("load", () => {
@@ -542,6 +542,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
