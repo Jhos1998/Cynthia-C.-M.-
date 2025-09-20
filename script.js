@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hh 🤗",
+    "Holoooo🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -220,7 +220,12 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 canvas.width = width;
 canvas.height = height;
-
+// 🔹 Ajuste especial para móviles (reduce resolución del canvas)
+if (/Mobi|Android/i.test(navigator.userAgent)) {
+  canvas.width = Math.floor(width / 1.5);
+  canvas.height = Math.floor(height / 1.5);
+  ctx.scale(0.67, 0.67);
+}
 window.addEventListener("resize", () => {
   width = window.innerWidth;
   height = window.innerHeight;
@@ -319,6 +324,7 @@ window.addEventListener("load", () => {
     animate();
   }, 1000);
 });
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 function animate() {
   // 1) Fade suave del frame anterior SIN parpadear:
   // usamos 'destination-out' para "borrar parcialmente" dejando rastro luminoso.
@@ -356,7 +362,11 @@ ctx.clearRect(0, 0, width, height);
     copos.splice(0, copos.length - MAX_COPOS);
   }
 
-  requestAnimationFrame(animate);
+  if (isMobile) {
+  setTimeout(() => requestAnimationFrame(animate), 33); // ~30 FPS
+} else {
+  requestAnimationFrame(animate); // normal en PC
+}
   
 }
 
@@ -532,6 +542,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
