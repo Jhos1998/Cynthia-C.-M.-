@@ -101,5 +101,19 @@ html, body {
     animation-timing-function: ease-in-out !important; /* más suave */
   }
 }
+/* 🔹 Título fijo con luminosidad en móviles (sin animación) */
+@media (max-width: 768px) {
+  .love-title {
+    color: #ffff00 !important;
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #ff0,
+      0 0 30px #ff0,
+      0 0 40px #ff0 !important;
+    transition: none !important; /* quitamos animación */
+  }
+}
+
 
 
