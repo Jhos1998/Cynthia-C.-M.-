@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hola 🤗",
+    "Hh 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -314,9 +314,11 @@ function createTrail(x, y) {
 const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 50 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 // Dentro de audio.addEventListener("play", ...)
-setTimeout(() => {
-  animate(); // arranca el loop de partículas medio segundo después
-}, 500);
+audio.addEventListener("play", () => {
+  setTimeout(() => {
+    animate();
+  }, 1000);
+});
 
 function animate() {
   // 1) Fade suave del frame anterior SIN parpadear:
@@ -350,7 +352,7 @@ ctx.clearRect(0, 0, width, height);
     particles.splice(0, particles.length - MAX_PARTICLES);
   }
   // 🔹 Cap total de copos para evitar saturación en móviles
-  const MAX_COPOS = /Mobi|Android/i.test(navigator.userAgent) ? 40 : 120;
+  const MAX_COPOS = /Mobi|Android/i.test(navigator.userAgent) ? 20 : 120;
   if (copos.length > MAX_COPOS) {
     copos.splice(0, copos.length - MAX_COPOS);
   }
@@ -531,9 +533,6 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
-
-
-
 
 
 
