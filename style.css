@@ -61,7 +61,12 @@ body.modo-oscuro::before {
   opacity: 0.15;
   filter: blur(15px);
 }
-
+/* 🔹 En móviles reducimos blur para que no se sature */
+@media (max-width: 768px) {
+  body.modo-oscuro::before {
+    filter: blur(6px) brightness(0.9);
+  }
+}
 /* Título bonito con glow en modo oscuro */
 body.modo-oscuro .love-title {
   color: #ffff00;
@@ -86,5 +91,6 @@ html, body {
   height: 100%;
   overflow: hidden; /* 🔹 evita desplazamiento */
 }
+
 
 
