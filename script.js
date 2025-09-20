@@ -314,12 +314,11 @@ function createTrail(x, y) {
 const MAX_PARTICLES = /Mobi|Android/i.test(navigator.userAgent) ? 50 : 700;
  // ajusta si quieres más/menos partículas en pantalla
 // Dentro de audio.addEventListener("play", ...)
-audio.addEventListener("play", () => {
+window.addEventListener("load", () => {
   setTimeout(() => {
     animate();
   }, 1000);
 });
-
 function animate() {
   // 1) Fade suave del frame anterior SIN parpadear:
   // usamos 'destination-out' para "borrar parcialmente" dejando rastro luminoso.
@@ -533,6 +532,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
