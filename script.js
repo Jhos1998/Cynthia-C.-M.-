@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Ha🤗",
+    "Hola 🤗",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
@@ -53,21 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const duracionesEspecial = [
   2000, // "Sabes..."
   3500, // "Quiero que sepas..."
-  4500, // "Cada vez que no te veo..."
+  4450, // "Cada vez que no te veo..."
   3000, // "En los momentos..."
   3000, // "Sé que a veces puedo ser bobo..."
   3850, // "Pero siempre intento mejorar..."
   3000, // "Tal vez... discutamos..."
   3000, // "Pero mi cariño..."
   3000, // "No necesito que pasen años..."
-  3000, // "Y de lo mucho..."
+  2000, // "Y de lo mucho..."
   3000, // "Aunque la
   3500, // "Siempre voy a estar..."
-  2000, // "Esperando el momento..."
-  4000, // "Te extraño más..."
+  2500, // "Esperando el momento..."
+  4450, // "Te extraño más..."
   2500, // "Te quiero mucho!!!..."
-  3000, // "Y pase lo que pase..."
-  2500, // "En el fondo..."
+  2700, // "Y pase lo que pase..."
+  2100, // "En el fondo..."
 ];
 
   let mensajeTimeouts = [];
@@ -542,6 +542,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
