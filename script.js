@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let mensajeTimeouts = [];
   let vecesReproducidas = 0; // 🔹 contador de reproducciones
 
-  function mostrarMensaje(listaMensajes, duraciones = [], defaultDuracion = 3000) {
+  function mostrarMensaje(listaMensajes, duraciones = [], defaultDuracion = 3500) {
     let i = 0;
     mensajeContainer.innerHTML = "";
 
@@ -542,6 +542,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
