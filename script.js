@@ -13,17 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const mensaje = [
     "Hola 🤗",
     "Mi corazón de melón 💛",
-    "Hoy, en este día tan especial de las flores amarillas,",
+    "Hoy, en este día tan especial de las flores amarillas.",
     "Quiero recordarte lo mucho que iluminas mi vida.",
     "Chyntia 🌻",
     "Eres increíble, admirable y única.",
     "Cada cosa que haces me inspira y me llena de orgullo.",
-    "Tu esencia es tan hermosa que no solo endulza mis días,",
+    "Tu esencia es tan hermosa que no solo endulza mis días.",
     "Sino que los convierte en algo mágico.",
     "Como un abrazo cálido que siempre llega cuando más lo necesito.",
     "Gracias por ser quien eres...",
     "Fuerte, tierna, especial… simplemente maravillosa.",
-    "Cada dia a tu lado",
+    "Cada dia a tu lado.",
     "Es un regalo que valoro en el fondo de mi corazón ❤️",
     "Te Quiero 🌻"
   ];
@@ -553,6 +553,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
