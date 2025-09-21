@@ -407,7 +407,7 @@ window.addEventListener("mousedown", (e) => {
   lastY = y;
 });
 
-indow.addEventListener("mouseup", () => {
+window.addEventListener("mouseup", () => {
   dragging = false;
   for (let i = 0; i < 20; i++) {
     particles.push(
@@ -548,6 +548,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
