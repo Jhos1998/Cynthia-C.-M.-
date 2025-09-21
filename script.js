@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas,",
     "Quiero recordarte lo mucho que iluminas mi vida.",
-    "Chyntia",
+    "Chyntia 🌻",
     "Eres increíble, admirable y única.",
     "Cada cosa que haces me inspira y me llena de orgullo.",
     "Tu esencia es tan hermosa que no solo endulza mis días,",
@@ -553,6 +553,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
