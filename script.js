@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE ESPECIAL (3ra vez) ---
   const mensajeEspecial = [
-    "Sabes..."
+    "Sabes...",
 "Quiero que sepas lo mucho que te valoro, lo importante que eres para mí.",
 "Cada vez que no te veo, siento que me falta algo, como si el día no fuera el mismo.",
 "En los momentos en los que, sin querer, te pienso.",
@@ -553,6 +553,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
