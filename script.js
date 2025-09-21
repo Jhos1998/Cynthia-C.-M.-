@@ -30,44 +30,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE ESPECIAL (3ra vez) ---
   const mensajeEspecial = [
-    "Sabes...",
-    "Quiero que sepas lo mucho que te valoro, lo importante que eres para mí.",
-    "Cada vez que no te veo, siento que me falta algo, como si el día no fuera el mismo.",
-    "En los momentos en los que, sin querer, te pienso.",
-    "Sé que a veces puedo ser bobo o no hago lo que esperas.",
-    "Pero siempre intento mejorar porque que te quiero, y quiero que estes bien.",
-    "Tal vez las cosas no saldran como queramos.",
-    "Pero lo que siento por ti siempre sera inmenso.",
-    "No necesito que pasen años para darme cuenta de lo especial que eres.",
-    "Y de lo mucho que me importas.",
-    "Aunque la distancia o el tiempo nos separen,",
-    "Siempre voy a estar para ti, con lo mejor de mí, con todo lo que soy.",
-    "Esperando el momento para verte de nuevo.",
-    "Te extraño más de lo que imaginas. Cada recuerdo contigo lo guardo con mucho cariño.",
-    "Te quiero mucho!!! mucho!!!, mi corazón de melón.",
-    "Y pase lo que pase, siempre te voy a llevar conmigo.",
-    "En el fondo de mi corazón ❤️"
+    "Sabes..."
+"Quiero que sepas lo mucho que te valoro, lo importante que eres para mí.",
+"Cada vez que no te veo, siento que me falta algo, como si el día no fuera el mismo.",
+"En los momentos en los que, sin querer, te pienso.",
+"Sé que a veces puedo ser bobo o no hago lo que esperas.",
+"Pero siempre intento mejorar porque te quiero, y quiero que estés bien.",
+"Tal vez las cosas no saldrán como queramos.",
+"Pero lo que siento por ti siempre será inmenso.",
+"No necesito que pasen años para darme cuenta de lo especial que eres.",
+"Y de lo mucho que me importas.",
+"Aunque la distancia o el tiempo nos separen,",
+"Siempre voy a estar para ti, con lo mejor de mí, con todo lo que soy.",
+"Esperando el momento para verte de nuevo.",
+"Te extraño más de lo que imaginas. Cada recuerdo contigo lo guardo con mucho cariño.",
+"Te quiero mucho!!! mucho!!!, mi corazón de melón.",
+"Y pase lo que pase, siempre te voy a llevar conmigo.",
+"En el fondo de mi corazón ❤️"
 ];
 
   // 🔹 Duraciones personalizadas solo para el mensaje especial
   const duracionesEspecial = [
-  2000, // "Sabes..."
-  3500, // "Quiero que sepas..."
-  4450, // "Cada vez que no te veo..."
-  3000, // "En los momentos..."
-  3000, // "Sé que a veces puedo ser bobo..."
-  3850, // "Pero siempre intento mejorar..."
-  3000, // "Tal vez... discutamos..."
-  3000, // "Pero mi cariño..."
-  3000, // "No necesito que pasen años..."
-  2000, // "Y de lo mucho..."
-  3000, // "Aunque la
-  3500, // "Siempre voy a estar..."
-  2500, // "Esperando el momento..."
-  4450, // "Te extraño más..."
-  2500, // "Te quiero mucho!!!..."
-  2700, // "Y pase lo que pase..."
-  2100, // "En el fondo..."
+  2100, // "Sabes..."
+  4000, // "Quiero que sepas..."
+  4500, // "Cada vez que no te veo..."
+  3100, // "En los momentos..."
+  3100, // "Sé que a veces puedo ser bobo..."
+  3900, // "Pero siempre intento mejorar..."
+  3100, // "Tal vez... discutamos..."
+  3100, // "Pero mi cariño..."
+  3100, // "No necesito que pasen años..."
+  2200, // "Y de lo mucho..."
+  3100, // "Aunque la
+  3700, // "Siempre voy a estar..."
+  3000, // "Esperando el momento..."
+  4500, // "Te extraño más..."
+  3000, // "Te quiero mucho!!!..."
+  3000, // "Y pase lo que pase..."
+  2500, // "En el fondo..."
 ];
 
   let mensajeTimeouts = [];
@@ -553,6 +553,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
