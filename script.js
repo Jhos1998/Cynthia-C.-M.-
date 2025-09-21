@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Cada dia a tu lado.",
     "Es un regalo que valoro en el fondo de mi corazón ❤️",
     "Y en este día quiero recordarte que tu sonrisa.",
-    "Es una de las cosas más perfectas e irremplazables que existen en mi mundo.”,
+    "Es una de las cosas más perfectas e irremplazables que existen en mi mundo.",
     "Te Quiero 🌻"
   ];
 // 🔹 Duraciones personalizadas para el mensaje normal
@@ -574,6 +574,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
