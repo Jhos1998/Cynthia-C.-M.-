@@ -436,6 +436,49 @@ window.addEventListener("mousemove", (e) => {
   lastX = x;
   lastY = y;
 });
+
+
+
+// --- Eventos táctiles (para móviles) ---
+window.addEventListener("touchstart", (e) => {
+  const touch = e.touches[0];
+  const { x, y } = fixCoords(touch.clientX, touch.clientY);
+  dragging = true;
+  lastX = x;
+  lastY = y;
+});
+
+window.addEventListener("touchmove", (e) => {
+  const touch = e.touches[0];
+  const { x, y } = fixCoords(touch.clientX, touch.clientY);
+  if (dragging) {
+    for (let i = 0; i < trailCount; i++) {
+      createTrail(x, y);
+    }
+  }
+  lastX = x;
+  lastY = y;
+});
+
+window.addEventListener("touchend", (e) => {
+  dragging = false;
+  const touch = e.changedTouches[0];
+  const { x, y } = fixCoords(touch.clientX, touch.clientY);
+
+  // 🔹 explosión en el punto exacto del toque
+  for (let i = 0; i < 20; i++) {
+    particles.push(
+      new Particle(
+        x,
+        y,
+        ["#ffffff", "#ffd700"][Math.floor(Math.random() * 2)],
+        Math.random() * 4 + 2,
+        { x: (Math.random() - 0.5) * 4, y: (Math.random() - 0.5) * 4 }
+      )
+    );
+  }
+});
+
 // --- Click (explosión y copos) ---
 window.addEventListener("click", (e) => {
   createExplosion(e.clientX, e.clientY);
@@ -548,6 +591,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
