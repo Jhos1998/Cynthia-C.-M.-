@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- MENSAJE NORMAL ---
   const mensaje = [
-    "Hola 🤗",
+    "Hola 💛",
     "Mi corazón de melón 💛",
     "Hoy, en este día tan especial de las flores amarillas.",
     "Quiero recordarte lo mucho que iluminas mi vida.",
-    "Chyntia 🌻",
     "Eres increíble, admirable y única.",
+    "Chyntia 🌻",
     "Cada cosa que haces me inspira y me llena de orgullo.",
     "Tu esencia es tan hermosa que no solo endulza mis días.",
     "Sino que los convierte en algo mágico.",
@@ -25,28 +25,49 @@ document.addEventListener("DOMContentLoaded", () => {
     "Fuerte, tierna, especial… simplemente maravillosa.",
     "Cada dia a tu lado.",
     "Es un regalo que valoro en el fondo de mi corazón ❤️",
+    "Y en este día quiero recordarte que tu sonrisa.",
+    "Es una de las cosas más perfectas e irremplazables que existen en mi mundo.”,
     "Te Quiero 🌻"
   ];
-
+// 🔹 Duraciones personalizadas para el mensaje normal
+  const duracionesMensaje = [
+  2800, // "Hola 💛"
+  3500, // "Mi corazón de melón 💛"
+  4200, // "Hoy, en este día tan especial de las flores amarillas."
+  4200, // "Quiero recordarte lo mucho que iluminas mi vida."
+  4000, // "Eres increíble, admirable y única."
+  3200, // "Chyntia 🌻"
+  4200, // "Cada cosa que haces me inspira y me llena de orgullo."
+  4200, // "Tu esencia es tan hermosa que no solo endulza mis días."
+  4000, // "Sino que los convierte en algo mágico."
+  4500, // "Como un abrazo cálido que siempre llega cuando más lo necesito."
+  4000, // "Gracias por ser quien eres..."
+  4200, // "Fuerte, tierna, especial… simplemente maravillosa."
+  3200, // "Cada dia a tu lado."
+  4200, // "Es un regalo que valoro en el fondo de mi corazón ❤️"
+  4000, // "Y en este día quiero recordarte que tu sonrisa."
+  4800, // "Es una de las cosas más perfectas e irremplazables que existen en mi mundo.”
+  3000  // "Te"
+];
   // --- MENSAJE ESPECIAL (3ra vez) ---
   const mensajeEspecial = [
     "Sabes...",
-"Quiero que sepas lo mucho que te valoro, lo importante que eres para mí.",
-"Cada vez que no te veo, siento que me falta algo, como si el día no fuera el mismo.",
-"En los momentos en los que, sin querer, te pienso.",
-"Sé que a veces puedo ser bobo o no hago lo que esperas.",
-"Pero siempre intento mejorar porque te quiero, y quiero que estés bien.",
-"Tal vez las cosas no saldrán como queramos.",
-"Pero lo que siento por ti siempre será inmenso.",
-"No necesito que pasen años para darme cuenta de lo especial que eres.",
-"Y de lo mucho que me importas.",
-"Aunque la distancia o el tiempo nos separen,",
-"Siempre voy a estar para ti, con lo mejor de mí, con todo lo que soy.",
-"Esperando el momento para verte de nuevo.",
-"Te extraño más de lo que imaginas. Cada recuerdo contigo lo guardo con mucho cariño.",
-"Te quiero mucho!!! mucho!!!, mi corazón de melón.",
-"Y pase lo que pase, siempre te voy a llevar conmigo.",
-"En el fondo de mi corazón ❤️"
+    "Quiero que sepas lo mucho que te valoro, lo importante que eres para mí.",
+    "Cada vez que no te veo, siento que me falta algo, como si el día no fuera el mismo.",
+    "En los momentos en los que, sin querer, te pienso.",
+    "Sé que a veces puedo ser bobo o no hago lo que esperas.",
+    "Pero siempre intento mejorar porque te quiero, y quiero que estés bien.",
+    "Tal vez las cosas no saldrán como queramos.",
+    "Pero lo que siento por ti siempre será inmenso.",
+    "No necesito que pasen años para darme cuenta de lo especial que eres.",
+    "Y de lo mucho que me importas.",
+    "Aunque la distancia o el tiempo nos separen,",
+    "Siempre voy a estar para ti, con lo mejor de mí, con todo lo que soy.",
+    "Esperando el momento para verte de nuevo.",
+    "Te extraño más de lo que imaginas. Cada recuerdo contigo lo guardo con mucho cariño.",
+    "Te quiero mucho!!! mucho!!!, mi corazón de melón.",
+    "Y pase lo que pase, siempre te voy a llevar conmigo.",
+    "En el fondo de mi corazón ❤️"
 ];
 
   // 🔹 Duraciones personalizadas solo para el mensaje especial
@@ -142,8 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // 🔹 Todas las demás veces
         audio.volume = 1; // volumen normal
         setTimeout(() => {
-          mostrarMensaje(mensaje, [], 3500);
-        }, 4000);
+          mostrarMensaje(mensaje, [], 4000);
+        }, 5000);
       }
     }
   });
@@ -553,6 +574,7 @@ window.addEventListener("touchmove", (e) => {
     lastY = touch.clientY;
   }
 });
+
 
 
 
