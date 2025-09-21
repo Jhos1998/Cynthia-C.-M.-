@@ -392,17 +392,23 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 // --- Eventos ---
 let dragging = false;
 let lastX = 0, lastY = 0;
+function fixCoords(x, y) {
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    return { x: x / 1.5, y: y / 1.5 };  // corregir con el mismo factor usado arriba
+  }
+  return { x, y };
+}
+
 
 window.addEventListener("mousedown", (e) => {
+  const { x, y } = fixCoords(e.clientX, e.clientY);
   dragging = true;
-  lastX = e.clientX;
-  lastY = e.clientY;
+  lastX = x;
+  lastY = y;
 });
 
-window.addEventListener("mouseup", () => {
+indow.addEventListener("mouseup", () => {
   dragging = false;
-
-  // ✨ efecto final elegante al soltar
   for (let i = 0; i < 20; i++) {
     particles.push(
       new Particle(
@@ -421,15 +427,15 @@ const trailCount = /Mobi|Android/i.test(navigator.userAgent) ? 1 : 2;
 
 // --- Movimiento con mouse (PC) ---
 window.addEventListener("mousemove", (e) => {
+  const { x, y } = fixCoords(e.clientX, e.clientY);
   if (dragging) {
     for (let i = 0; i < trailCount; i++) {
-      createTrail(e.clientX, e.clientY);
+      createTrail(x, y);
     }
   }
-  lastX = e.clientX;
-  lastY = e.clientY;
+  lastX = x;
+  lastY = y;
 });
-
 // --- Click (explosión y copos) ---
 window.addEventListener("click", (e) => {
   createExplosion(e.clientX, e.clientY);
